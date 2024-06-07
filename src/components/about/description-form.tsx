@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { TAboutWithAchievements } from "@/types/about-type";
 import { AboutSchema, AboutValues } from "@/schemas/about-schema";
 import {
   Form,
@@ -22,7 +21,7 @@ import { Button } from "../ui/button";
 import { LoadingButton } from "../loading-button";
 
 interface DescriptionFormProps {
-  initialData: TAboutWithAchievements;
+  initialData: string;
   onSubmit(values: InsertAboutValues["description"]): void;
   loadingEditDescription?: boolean;
 }
@@ -37,7 +36,7 @@ export const DescriptionForm = ({
 
   const form = useForm<Pick<AboutValues, "description">>({
     defaultValues: {
-      description: initialData.description || "",
+      description: initialData || "",
     },
 
     resolver: zodResolver(AboutSchema.pick({ description: true })),
@@ -79,9 +78,11 @@ export const DescriptionForm = ({
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset();
+      reset({
+        description: initialData,
+      });
     }
-  }, [isSubmitSuccessful, reset]);
+  }, [initialData, isSubmitSuccessful, reset]);
 
   return (
     <CardWrapperForm
@@ -92,14 +93,19 @@ export const DescriptionForm = ({
           ? () => {
               setIsEditing(false);
               reset({
-                description: initialData.description,
+                description: initialData,
               });
             }
-          : () => setIsEditing(true)
+          : () => {
+              setIsEditing(true);
+              reset({
+                description: initialData,
+              });
+            }
       }
     >
       {!isEditing && (
-        <p className="whitespace-pre-line text-sm">{initialData.description}</p>
+        <p className="whitespace-pre-line text-sm">{initialData}</p>
       )}
       {isEditing && (
         <Form {...form}>
@@ -147,7 +153,7 @@ export const DescriptionForm = ({
                 onClick={() => {
                   setIsEditing(false);
                   reset({
-                    description: initialData.description,
+                    description: initialData,
                   });
                 }}
               >

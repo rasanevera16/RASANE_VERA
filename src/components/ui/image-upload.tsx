@@ -9,7 +9,6 @@ import { Button } from "./button";
 import { UploadDropzone } from "@/lib/uploadthing";
 import { Loader } from "./loader";
 import { ProductValues } from "@/schemas/product-schema";
-import { Skeleton } from "./skeleton";
 
 interface ImageUploadProps {
   value: { name: string; url: string }[];
@@ -35,21 +34,6 @@ export const ImageUpload = ({ value, onRemove }: ImageUploadProps) => {
       <div className="flex items-center justify-center">
         <Loader />
       </div>
-    );
-  }
-
-  if (!value) {
-    return (
-      <>
-        <div className="grid grid-cols-2 gap-2">
-          {Array.from({ length: 10 }).map((_, index) => (
-            <Skeleton
-              className="aspect-video h-auto w-full overflow-hidden rounded-l"
-              key={index}
-            />
-          ))}
-        </div>
-      </>
     );
   }
 

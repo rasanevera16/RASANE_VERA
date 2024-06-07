@@ -78,9 +78,11 @@ export const VisionForm = ({
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset();
+      reset({
+        vision: initialData,
+      });
     }
-  }, [isSubmitSuccessful, reset]);
+  }, [initialData, isSubmitSuccessful, reset]);
 
   return (
     <CardWrapperForm
@@ -94,7 +96,12 @@ export const VisionForm = ({
                 vision: initialData,
               });
             }
-          : () => setIsEditing(true)
+          : () => {
+              setIsEditing(true);
+              reset({
+                vision: initialData,
+              });
+            }
       }
     >
       {!isEditing && (

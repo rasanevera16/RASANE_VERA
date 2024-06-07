@@ -78,9 +78,11 @@ export const MissionForm = ({
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset();
+      reset({
+        mission: initialData,
+      });
     }
-  }, [isSubmitSuccessful, reset]);
+  }, [initialData, isSubmitSuccessful, reset]);
 
   return (
     <CardWrapperForm
@@ -94,7 +96,12 @@ export const MissionForm = ({
                 mission: initialData,
               });
             }
-          : () => setIsEditing(true)
+          : () => {
+              setIsEditing(true);
+              reset({
+                mission: initialData,
+              });
+            }
       }
     >
       {!isEditing && (

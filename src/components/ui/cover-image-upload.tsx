@@ -7,7 +7,6 @@ import { Button } from "./button";
 import { Trash } from "lucide-react";
 import Image from "next/image";
 import { UploadDropzone } from "@/lib/uploadthing";
-import { Skeleton } from "./skeleton";
 
 interface CoverImageUploadProps {
   value: string;
@@ -33,12 +32,6 @@ export const CoverImageUpload = ({
       <div className="flex items-center justify-center">
         <Loader />
       </div>
-    );
-  }
-
-  if (!value) {
-    return (
-      <Skeleton className="aspect-video h-auto w-full overflow-hidden rounded-l" />
     );
   }
 
