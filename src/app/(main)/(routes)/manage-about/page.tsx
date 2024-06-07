@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 import About from "@/components/about";
-import { db } from "@/server/drizzle";
 import { Container } from "@/components/ui/container";
 import { Header } from "./_components/header";
+import { getAbout } from "@/server/data/about";
 
 export const metadata: Metadata = {
   title: "Manage About",
@@ -11,20 +11,13 @@ export const metadata: Metadata = {
 };
 
 const ManageAboutPage = async () => {
-  const getAbout = await db.query.about.findMany({
-    with: {
-      aboutAchievements: true,
-    },
-  });
+  const about = await getAbout();
 
   return (
     <>
-      <Header
-        title="Tentang Rasane Vera"
-        showAddButton={getAbout.length === 0}
-      />
+      <Header title="Tentang Rasane Vera" showAddButton={about.length === 0} />
       <Container className="mt-14">
-        <About data={getAbout} />
+        <About />
       </Container>
     </>
   );
