@@ -1,3 +1,3 @@
 ## Getting Started
 
-Admin panel dari website produk katalog
+Admin panel dari website produk katalog.
