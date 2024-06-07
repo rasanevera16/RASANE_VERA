@@ -5,17 +5,11 @@ import { logger } from "hono/logger";
 import { secureHeaders } from "hono/secure-headers";
 import { prettyJSON } from "hono/pretty-json";
 
-import type { PageConfig } from "next";
-
 import products from "./products";
 import about from "./about";
 import privacyPolicy from "./privacy-policy";
 import termsOfService from "./terms-of-service";
 import reviews from "./reviews";
-
-export const config: PageConfig = {
-  runtime: "edge",
-};
 
 const app = new Hono().basePath("/api");
 
