@@ -4,6 +4,7 @@
  * @type {string[]}
  */
 export const publicRoutes: string[] = [
+  "/public",
   "/api/uploadthing",
   "/api/products(.*)",
   "/api/about(.*)",
