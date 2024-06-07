@@ -19,14 +19,13 @@ import { LoadingButton } from "../loading-button";
 import { TiptapFormat } from "../tiptap-format";
 import { Tiptap } from "../ui/tiptap";
 import { cn } from "@/lib/utils";
-import { TTermOfService } from "@/types/term-of-service-type";
 import {
   TermOfServiceSchema,
   TermOfServiceValues,
 } from "@/schemas/term-of-service-schema";
 
 interface TermsOfServiceFormProps {
-  initialData: TTermOfService;
+  initialData: string;
   onSubmit(values: InsertTermsOfServiceValues): void;
   loading?: boolean;
 }
@@ -40,7 +39,7 @@ export const TermsOfServiceForm = ({
 
   const form = useForm<TermOfServiceValues>({
     defaultValues: {
-      description: initialData.description || "",
+      description: initialData || "",
     },
 
     resolver: zodResolver(TermOfServiceSchema),
@@ -74,13 +73,18 @@ export const TermsOfServiceForm = ({
           ? () => {
               setIsEditing(false);
               reset({
-                description: initialData.description,
+                description: initialData,
               });
             }
-          : () => setIsEditing(true)
+          : () => {
+              setIsEditing(true);
+              reset({
+                description: initialData,
+              });
+            }
       }
     >
-      {!isEditing && <TiptapFormat description={initialData.description} />}
+      {!isEditing && <TiptapFormat description={initialData} />}
       {isEditing && (
         <Form {...form}>
           <form onSubmit={handleSubmit(handleSubmitForm)} className="space-y-4">
@@ -115,7 +119,7 @@ export const TermsOfServiceForm = ({
                 onClick={() => {
                   setIsEditing(false);
                   reset({
-                    description: initialData.description,
+                    description: initialData,
                   });
                 }}
               >

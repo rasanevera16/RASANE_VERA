@@ -18,7 +18,11 @@ const LogoutButton = ({ children }: React.PropsWithChildren) => {
 
   return (
     <>
-      <span onClick={onLogout} aria-disabled={loading}>
+      <span
+        onClick={onLogout}
+        aria-disabled={loading}
+        className="inline-flex w-full items-center gap-2"
+      >
         {loading && <Loader />}
         {children}
       </span>

@@ -26,7 +26,7 @@ const TermsOfService = ({ data }: TermsOfServiceProps) => {
         <TermsOfServiceForm
           key={term.id}
           onSubmit={onSubmit}
-          initialData={term}
+          initialData={term.description}
           loading={statusEditTermsOfService === "executing"}
         />
       ))}

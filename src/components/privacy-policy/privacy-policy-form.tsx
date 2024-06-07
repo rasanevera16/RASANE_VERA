@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { InsertPrivacyPolicyValues } from "@/server/drizzle/schema";
-import { TPrivacyPolicy } from "@/types/privacy-policy-type";
 import {
   Form,
   FormControl,
@@ -26,7 +25,7 @@ import { Tiptap } from "../ui/tiptap";
 import { cn } from "@/lib/utils";
 
 interface PrivacyPolicyFormProps {
-  initialData: TPrivacyPolicy;
+  initialData: string;
   onSubmit(values: InsertPrivacyPolicyValues): void;
   loading?: boolean;
 }
@@ -40,7 +39,7 @@ export const PrivacyPolicyForm = ({
 
   const form = useForm<PrivacyPolicyValues>({
     defaultValues: {
-      description: initialData.description || "",
+      description: initialData || "",
     },
 
     resolver: zodResolver(PrivacyPolicySchema),
@@ -74,13 +73,18 @@ export const PrivacyPolicyForm = ({
           ? () => {
               setIsEditing(false);
               reset({
-                description: initialData.description,
+                description: initialData,
               });
             }
-          : () => setIsEditing(true)
+          : () => {
+              setIsEditing(true);
+              reset({
+                description: initialData,
+              });
+            }
       }
     >
-      {!isEditing && <TiptapFormat description={initialData.description} />}
+      {!isEditing && <TiptapFormat description={initialData} />}
       {isEditing && (
         <Form {...form}>
           <form onSubmit={handleSubmit(handleSubmitForm)} className="space-y-4">
@@ -115,7 +119,7 @@ export const PrivacyPolicyForm = ({
                 onClick={() => {
                   setIsEditing(false);
                   reset({
-                    description: initialData.description,
+                    description: initialData,
                   });
                 }}
               >

@@ -51,7 +51,7 @@ const UserButton = ({ name, email, imageURL }: UserButtonProps) => {
         </div>
         <DropdownMenuSeparator />
         <LogoutButton>
-          <DropdownMenuItem className="cursor-pointer gap-3 focus:bg-destructive/10 focus:text-destructive">
+          <DropdownMenuItem className="w-full cursor-pointer gap-3 focus:bg-destructive/10 focus:text-destructive">
             <LogOut className="flex h-5 w-5 items-center justify-center" />
             Logout
           </DropdownMenuItem>

@@ -57,9 +57,11 @@ export const YoutubeUrlForm = ({
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset();
+      reset({
+        youtubeUrl: initialData,
+      });
     }
-  }, [isSubmitSuccessful, reset]);
+  }, [initialData, isSubmitSuccessful, reset]);
 
   return (
     <CardWrapperForm
@@ -73,7 +75,12 @@ export const YoutubeUrlForm = ({
                 youtubeUrl: initialData,
               });
             }
-          : () => setIsEditing(true)
+          : () => {
+              setIsEditing(true);
+              reset({
+                youtubeUrl: initialData,
+              });
+            }
       }
     >
       {!isEditing && (

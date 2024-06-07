@@ -54,7 +54,7 @@ const LoginForm = () => {
     startTransition(() => {
       login(values, callbackUrl).then((res) => {
         if (res?.error) {
-          return toast.success(res.error || urlError, {
+          toast.error(res.error || urlError, {
             position: "bottom-left",
           });
         }

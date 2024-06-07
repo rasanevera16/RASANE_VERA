@@ -26,7 +26,7 @@ const PrivacyPolicy = ({ data }: PrivacyPolicyProps) => {
         <PrivacyPolicyForm
           key={privacyPolicy.id}
           onSubmit={onSubmit}
-          initialData={privacyPolicy}
+          initialData={privacyPolicy.description}
           loading={statusEditPrivacyPolicy === "executing"}
         />
       ))}
