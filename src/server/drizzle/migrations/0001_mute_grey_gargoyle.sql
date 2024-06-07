@@ -1,0 +1,1 @@
+ALTER TABLE "about" RENAME COLUMN "youtube_url" TO "youtubeUrl";

@@ -1,0 +1,92 @@
+export const productsData = [
+  {
+    id: "tz4a98xxat96iws9zmbrgj3a",
+    name: "Nata de Aloevera Cup",
+    slug: "nata-de-aloevera-cup",
+    price: 30000,
+    description:
+      "Nata de Aloevera Cup Adalah produk minuman sehat dari `Rasane Vera` berbahan irisan/nata Lidah Buaya (Aloevera) dengan kualitas terbaik,berpemanis gula batu asli,diolah secara Higienis,dan telah memiliki izin edar BPOM MD & Halal, tersedia 3 varian rasa (Nanas,Melon,Leci)",
+    productImages: [
+      {
+        id: "kssa98xxat96iws9zmbrgj3a",
+        productId: "tz4a98xxat96iws9zmbrgj3a",
+        url: "https://images.unsplash.com/photo-1707030950844-541c79a7dc39?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name: "Nata de Aloevera Cup",
+        createdAt: new Date("2022-01-01"),
+        updatedAt: new Date("2022-01-01") as Date,
+      },
+    ],
+    isFeatured: true,
+    isArchived: false,
+    createdAt: new Date("2022-01-01"),
+    updatedAt: new Date("2022-01-01") as Date,
+  },
+  {
+    id: "pfh0haxfpzowht3oi213cqos",
+    name: "Aloevera Cube Drink",
+    slug: "aloevera-cube-drink",
+    price: 50000,
+    description:
+      "Aloevera Cube Drink Adalah produk minuman sehat Premium dari `Rasane Vera` berbahan irisan/nata Lidah Buaya (Aloevera) dengan kualitas terbaik,berpemanis gula batu asli,diolah secara Higienis,dan telah memiliki izin edar BPOM MD & Halal, tersedia 8 varian rasa (Nanas,Melon,Leci,Jambu Biji, Markisa,Lemon,Apel,Original)",
+    productImages: [
+      {
+        id: "kssa98xxat96iws9zmbrg9sa",
+        productId: "pfh0haxfpzowht3oi213cqos",
+        url: "https://images.unsplash.com/photo-1707030950844-541c79a7dc39?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name: "Aloevera Cube Drink",
+        createdAt: new Date("2022-01-04"),
+        updatedAt: new Date("2022-01-04") as Date,
+      },
+      {
+        id: "kssa98xxat96iwsw2mbrg9sa",
+        productId: "pfh0haxfpzowht3oi213cqos",
+        url: "https://images.unsplash.com/photo-1707030950844-541c79a7dc39?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name: "Aloevera Cube Drink",
+        createdAt: new Date("2022-01-04"),
+        updatedAt: new Date("2022-01-04") as Date,
+      },
+    ],
+    isFeatured: false,
+    isArchived: false,
+    createdAt: new Date("2022-01-04"),
+    updatedAt: new Date("2022-01-04") as Date,
+  },
+  {
+    id: "nc6bzmkmd014706rfda898to",
+    name: "Pure Aloevera Slice Pouch",
+    slug: "pure-aloevera-slice-pouch",
+    price: 70000,
+    description:
+      "Pure Aloevera Slice Pouch Adalah produk untuk bahan minuman sehat dari `Rasane Vera` berbentuk irisan dadu Nata Lidah Buaya (Aloevera) kualitas terbaik,diolah secara Higienis ,dan telah memiliki izin edar BPOM MD & Halal,produk ini difungsikan untuk campuran bahan minuman segar sesuai selera.",
+    productImages: [
+      {
+        id: "kssa98xxat96iws9zmbrg21s",
+        productId: "nc6bzmkmd014706rfda898to",
+        url: "https://images.unsplash.com/photo-1707030950844-541c79a7dc39?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name: "Pure Aloevera Slice Pouch",
+        createdAt: new Date("2022-01-10"),
+        updatedAt: new Date("2022-01-10") as Date,
+      },
+      {
+        id: "kssa98xxat96iwsw2mbrg0sa",
+        productId: "nc6bzmkmd014706rfda898to",
+        url: "https://images.unsplash.com/photo-1707030950844-541c79a7dc39?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name: "Pure Aloevera Slice Pouch",
+        createdAt: new Date("2022-01-10"),
+        updatedAt: new Date("2022-01-10") as Date,
+      },
+      {
+        id: "kssa98xxat96iwsw2mbrsasa",
+        productId: "nc6bzmkmd014706rfda898to",
+        url: "https://images.unsplash.com/photo-1707030950844-541c79a7dc39?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name: "Pure Aloevera Slice Pouch",
+        createdAt: new Date("2022-01-10"),
+        updatedAt: new Date("2022-01-10") as Date,
+      },
+    ],
+    isFeatured: true,
+    isArchived: false,
+    createdAt: new Date("2022-01-10"),
+    updatedAt: new Date("2022-01-10") as Date,
+  },
+];

@@ -1,0 +1,1 @@
+ALTER TABLE "products" ADD COLUMN "shortDescription" text NOT NULL;
