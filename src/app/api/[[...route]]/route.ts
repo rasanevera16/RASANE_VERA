@@ -13,17 +13,17 @@ import reviews from "./reviews";
 
 const app = new Hono().basePath("/api");
 
-app.use(async (c, next) => {
+app.use("*", async (c, next) => {
   const corsMiddleware = cors({
     origin: process.env.NEXT_PUBLIC_APP_URL!,
     allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-    allowHeaders: ["Origin", "Content-Type"],
+    allowHeaders: ["Origin", "Content-Type", "x-api-key"],
     exposeHeaders: ["Content-Length"],
     maxAge: 600,
     credentials: true,
   });
 
-  return await corsMiddleware(c, next);
+  await corsMiddleware(c, next);
 });
 app.use(secureHeaders());
 app.use(logger());
