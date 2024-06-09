@@ -13,18 +13,18 @@ import reviews from "./reviews";
 
 const app = new Hono().basePath("/api");
 
-app.use("*", async (c, next) => {
-  const corsMiddleware = cors({
-    origin: ["http://localhost:3000", "https://rasane-vera.netlify.app"],
-    allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-    allowHeaders: ["Origin", "Content-Type", "x-api-key", "Application/json"],
-    exposeHeaders: ["Content-Length"],
-    maxAge: 600,
-    credentials: true,
-  });
+// app.use("*", async (c, next) => {
+//   const corsMiddleware = cors({
+//     origin: ["http://localhost:3000", "https://rasane-vera.netlify.app"],
+//     allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+//     allowHeaders: ["Origin", "Content-Type", "x-api-key", "Application/json"],
+//     exposeHeaders: ["Content-Length"],
+//     maxAge: 600,
+//     credentials: true,
+//   });
 
-  await corsMiddleware(c, next);
-});
+//   await corsMiddleware(c, next);
+// });
 app.use(secureHeaders());
 app.use(logger());
 app.use(prettyJSON());
