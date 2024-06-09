@@ -15,9 +15,9 @@ const app = new Hono().basePath("/api");
 
 app.use("*", async (c, next) => {
   const corsMiddleware = cors({
-    origin: process.env.NEXT_PUBLIC_APP_URL!,
+    origin: ["http://localhost:3000", "https://rasane-vera.netlify.app"],
     allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-    allowHeaders: ["Origin", "Content-Type", "x-api-key"],
+    allowHeaders: ["Origin", "Content-Type", "x-api-key", "Application/json"],
     exposeHeaders: ["Content-Length"],
     maxAge: 600,
     credentials: true,
